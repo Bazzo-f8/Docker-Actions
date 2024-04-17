@@ -53,8 +53,8 @@ jobs:
           publish_dir: ./dist
 
   dockerize:
-    needs: [ build ]  # Dipende da 'build'
     runs-on: ubuntu-latest # immagine di ubuntu
+    needs: [ build ]  # Dipende da 'build'
 
     steps:
       - name: Checkout code
@@ -63,7 +63,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-artifact  # Specifica il nome dell'artifact creato dal job 'build'
+          name: build-output  # Specifica il nome dell'artifact creato dal job 'build'
           path: dist  # Specifica la cartella di destinazione per l'artifact
 
       - name: Build and push Docker image
