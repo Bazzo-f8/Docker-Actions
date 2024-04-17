@@ -66,8 +66,7 @@ jobs:
           name: build-output  # Specifica il nome dell'artifact creato dal job 'build'
           path: dist  # Specifica la cartella di destinazione per l'artifact
 
-      - name: Build and push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v6
+      - uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: Bazzo-f8/docker-test
           registry: docker.io
